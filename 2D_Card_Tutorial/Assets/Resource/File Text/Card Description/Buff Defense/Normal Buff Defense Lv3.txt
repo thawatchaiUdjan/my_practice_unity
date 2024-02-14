@@ -1,0 +1,1 @@
+Increase DEF <color=#6779B5>50%</color=#6779B5> for <color=#6779B5>2</color=#6779B5>-Turn. For <color=#D64445>1</color=#D64445>-Target.

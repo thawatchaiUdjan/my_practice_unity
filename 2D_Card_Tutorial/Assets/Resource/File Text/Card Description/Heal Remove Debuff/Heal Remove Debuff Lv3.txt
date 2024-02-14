@@ -1,0 +1,1 @@
+Heal HP <color=#84B459>9%</color=#84B459> of MAX HP. And Remove all <color=#AF65A3>Debuff</color=#AF65A3>. For <color=#D64445>1</color=#D64445>-Target.

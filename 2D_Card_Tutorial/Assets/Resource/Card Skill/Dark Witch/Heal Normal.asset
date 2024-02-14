@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 904311a60880ff24295f609a611cb034, type: 3}
+  m_Name: Heal Normal
+  m_EditorClassIdentifier: 
+  skillType: 1
+  actionType: 0
+  name: Normal Heal
+  artwork: {fileID: 21300000, guid: 169e39be692bc7b46bc9528e5b23a063, type: 3}
+  animation: {fileID: 7400000, guid: 6c19a2fff438342409beb352778ae238, type: 2}
+  descriptionLv1: {fileID: 4900000, guid: 7824d85a6b5ac124190ce414c2165d2b, type: 3}
+  descriptionLv2: {fileID: 4900000, guid: b15cace1f6bffaf46b2665516f6f5956, type: 3}
+  descriptionLv3: {fileID: 4900000, guid: c69d7d25cc502864eae49808bc82d4f0, type: 3}
+  heal: 3
+  healLv2: 6
+  healLv3: 9

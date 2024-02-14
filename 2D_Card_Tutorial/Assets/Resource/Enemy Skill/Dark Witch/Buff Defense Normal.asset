@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7b0bc0d11c18f4a8d2442217d4e69b, type: 3}
+  m_Name: Buff Defense Normal
+  m_EditorClassIdentifier: 
+  skillType: 2
+  actionType: 0
+  name: Normal Buff Attack Up
+  animation: {fileID: 7400000, guid: eec36da75c492b8428d0dd7228ec7a23, type: 2}
+  statusType: {fileID: 11400000, guid: c5ca4a2e0735ecc4597916a773d4ed70, type: 2}
+  statusUp: 50
+  turnDuration: 2

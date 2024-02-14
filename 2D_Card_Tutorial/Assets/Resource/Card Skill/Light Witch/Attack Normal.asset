@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a3c590df90f0324086680d7fc808b1e, type: 3}
+  m_Name: Attack Normal
+  m_EditorClassIdentifier: 
+  type: 0
+  actionType: 0
+  artwork: {fileID: 21300000, guid: 65d3f371562af7748addcc22c0c4e8f2, type: 3}
+  name: Normal Attack
+  animation: {fileID: 7400000, guid: 5bf51eafcf58f484fb86cd6c60c2b675, type: 2}
+  descriptionLv1: {fileID: 4900000, guid: 5a99be9deffd45949a87b4b439d40645, type: 3}
+  descriptionLv2: {fileID: 4900000, guid: 2334f1784bbd2a84f8c7e5e0f4b11f31, type: 3}
+  descriptionLv3: {fileID: 4900000, guid: fa522412d1b4be349b53e0dea6233c83, type: 3}
+  damage: 100
+  damageLv2: 150
+  damageLv3: 250

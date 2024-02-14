@@ -1,0 +1,1 @@
+Increase DEF <color=#6779B5>@Percent%</color=#6779B5> for @Turn-Turn.

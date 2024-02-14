@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90c1a60b14fa73d44947ccef708f984f, type: 3}
+  m_Name: Debuff Defense Down Normal
+  m_EditorClassIdentifier: 
+  skillType: 3
+  actionType: 0
+  name: Normal Debuff Defense Down
+  animation: {fileID: 7400000, guid: 2d6829b7d0852764eb845dd087a07969, type: 2}
+  damage: 60
+  hits: 5
+  statusType: {fileID: 11400000, guid: a83b0c36bcff84b4aa4bb73269887777, type: 2}
+  StatusDown: 50
+  turnDuration: 2

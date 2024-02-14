@@ -1,0 +1,1 @@
+Decrease ATK <color=#D64445>@Percent%</color=#D64445> for @Turn-Turn.

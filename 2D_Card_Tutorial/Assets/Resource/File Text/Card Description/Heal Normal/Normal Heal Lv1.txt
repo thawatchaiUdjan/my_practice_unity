@@ -1,0 +1,1 @@
+Heal HP <color=#84B459>3%</color=#84B459> of MAX HP. For <color=#D64445>1</color=#D64445>-Target.

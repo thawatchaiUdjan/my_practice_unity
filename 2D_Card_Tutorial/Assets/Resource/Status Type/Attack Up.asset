@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce7edd7342310b5409b208fbe8876bec, type: 3}
+  m_Name: Attack Up
+  m_EditorClassIdentifier: 
+  buffType: 1
+  name: Attack Up
+  icon: {fileID: 21300000, guid: 67b7ca53e53e779439845a6ef461f81a, type: 3}
+  description: {fileID: 4900000, guid: 7c1a0b31314a29f4d9c962d08de95a14, type: 3}

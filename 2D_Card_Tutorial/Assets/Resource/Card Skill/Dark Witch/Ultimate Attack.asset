@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1efa07369cefa9b42abeac343dde4cd4, type: 3}
+  m_Name: Ultimate Attack
+  m_EditorClassIdentifier: 
+  skillType: 4
+  actionType: 0
+  name: Dark Beam Atack
+  artwork: {fileID: 21300000, guid: c6ed0d61bbae033419132fc775b479e0, type: 3}
+  animation: {fileID: 7400000, guid: 0e3329f950608c745ac8a6807fa20242, type: 2}
+  descriptionLv1: {fileID: 4900000, guid: ea4e141f65b930d4f8d4f71e5313a934, type: 3}
+  descriptionLv2: {fileID: 0}
+  descriptionLv3: {fileID: 0}
+  damage: 800
+  hits: 16
+  evadeAble: 0

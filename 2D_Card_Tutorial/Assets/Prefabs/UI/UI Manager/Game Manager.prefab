@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5583509790990249522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6288217566977905863}
+  - component: {fileID: 2857342217995151715}
+  - component: {fileID: 3964598695320440649}
+  - component: {fileID: 1313903934627977087}
+  - component: {fileID: 6038098360464394304}
+  - component: {fileID: 8884120601189976676}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6288217566977905863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5583509790990249522}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2857342217995151715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5583509790990249522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce74c609ca168644d89a5c6c0bb4f562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _battleLevelText: {fileID: 0}
+  _gameOverText: {fileID: 0}
+  battleLevel: 1
+  limitCard: 7
+  delayTurn: 0.8
+  bossLevel: 10
+  isGameStart: 1
+  isLoadCard: 1
+  isBossBattle: 0
+  easyStatus: 1
+  normalStatus: 2
+  hardStatus: 4
+--- !u!114 &3964598695320440649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5583509790990249522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f8275c68c9b19409e8f173cda76497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _players: {fileID: 0}
+--- !u!114 &1313903934627977087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5583509790990249522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f446dcf303575534c9697887702e4a2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemies: {fileID: 0}
+  _enemyBoss: {fileID: 11400000, guid: 7a1556a6d8bbf65478161266567c5aee, type: 2}
+  _enemyList:
+  - {fileID: 11400000, guid: b80fb0521903fe04894b149004da2780, type: 2}
+  - {fileID: 11400000, guid: a3f97a6016c4b8241b3b820a4bb8ef20, type: 2}
+  - {fileID: 11400000, guid: c3b8c791b47f3714cb231ef0e481283f, type: 2}
+  statusMultiply: 0
+--- !u!114 &6038098360464394304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5583509790990249522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9efd4d36dc65e4c48b5741d69794191d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardBattles:
+  - {fileID: 11400000, guid: a65d58f47e0696a4196d7ef5935770b2, type: 2}
+  - {fileID: 11400000, guid: a28b05b1c9279a4498bf0ec138f15632, type: 2}
+  - {fileID: 11400000, guid: eb5b3fa7b8e35ec4d994dcb337bf9695, type: 2}
+  _continueButtonMenu: {fileID: 0}
+--- !u!114 &8884120601189976676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5583509790990249522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff963522301c1cb45927f0a573c054bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardNormal: {fileID: 1311185791085053463, guid: b28e22283fa6dd941a7a913a3947f055, type: 3}
+  _cardUltimate: {fileID: 1311185791085053463, guid: 410410877ab0b3f47b7efe47728c896c, type: 3}
+  _cardMove: {fileID: 6676526590827679866, guid: 9945e84364ea0e249932998bfef86664, type: 3}
+  cardDeck: {fileID: 0}
+  cardPlaySlot: {fileID: 0}
+  cardUseSlot: {fileID: 0}
+  isInteractable: 0
+  isMove: 0
+  isDrag: 0
+  isDragOut: 0
+  pressTime: 0.3
+  longPressTime: 0.7
+  cardSpaceDrag: 80
+  cardUseDelay: 0.7
+  cardMoveSpeed: 12
+  cardSlideSpeed: 6

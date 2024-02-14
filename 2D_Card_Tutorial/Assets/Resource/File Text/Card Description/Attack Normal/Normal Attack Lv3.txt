@@ -1,0 +1,1 @@
+Deal DMG <color=#D64445>250%</color=#D64445> of ATK to Target. For <color=#D64445>1</color=#D64445>-Target.

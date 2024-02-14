@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821d3c3c772fda441ac5055ac3094d17, type: 3}
+  m_Name: Buff Defense Normal
+  m_EditorClassIdentifier: 
+  skillType: 2
+  actionType: 0
+  name: Normal Buff Defense Up
+  artwork: {fileID: 21300000, guid: f415daa555827634cb1f7291f3e5910a, type: 3}
+  animation: {fileID: 7400000, guid: 3ca115d6bd9a4384bbce55b17efb2080, type: 2}
+  descriptionLv1: {fileID: 4900000, guid: 79706b056ade3c84f8aa9bc25559e631, type: 3}
+  descriptionLv2: {fileID: 4900000, guid: 19f8151032dbc63428cf0a8e8256710b, type: 3}
+  descriptionLv3: {fileID: 4900000, guid: b2aeb03e57f5399458e38b4b3144c47c, type: 3}
+  statusType: {fileID: 11400000, guid: c5ca4a2e0735ecc4597916a773d4ed70, type: 2}
+  defendUp: 20
+  defendUpLv2: 30
+  defendUpLv3: 50
+  turnDuration: 2

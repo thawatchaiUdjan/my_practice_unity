@@ -1,0 +1,1 @@
+Deal DMG <color=#D64445>150%</color=#D64445> of ATK to Target. And Remove all <color=#6779B5>Buff</color=#6779B5>. For <color=#D64445>1</color=#D64445>-Target.

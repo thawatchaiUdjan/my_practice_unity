@@ -1,0 +1,1 @@
+Deal DMG <color=#D64445>60%</color=#D64445> of ATK to Target. Decrease DEF <color=#AF65A3>20%</color=#AF65A3> for <color=#AF65A3>2</color=#AF65A3>-Turn. For <color=#D64445>1</color=#D64445>-Target.

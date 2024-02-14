@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23abc3a6038bcb64e8941537b7b354d4, type: 3}
+  m_Name: Dark Witch
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2849785123430364665, guid: ea9a8a7c2e70ad642871927fd6632af4, type: 3}
+  characterName: Dark Witch
+  attack: 600
+  defense: 30
+  health: 4500
+  speed: 5
+  unlockCondition: Clear Hard Mode (STAGE 10)
+  showPrefab: {fileID: 137012811977991287, guid: d71f4439b5b04d24eb237b4632114e5b, type: 3}
+  ultimateCard: {fileID: 11400000, guid: 86b1a6adbfc685c44a292bec33505557, type: 2}
+  cards:
+  - {fileID: 11400000, guid: e9e4195eb1c63194f8e87e59a1b050c1, type: 2}
+  - {fileID: 11400000, guid: 916c44c4435036049b3202193cded6bf, type: 2}
+  - {fileID: 11400000, guid: 7b535d44438e5a548a8c875705b000f5, type: 2}
+  - {fileID: 11400000, guid: 2c72c675ddef23b47b3b90006def16d4, type: 2}
