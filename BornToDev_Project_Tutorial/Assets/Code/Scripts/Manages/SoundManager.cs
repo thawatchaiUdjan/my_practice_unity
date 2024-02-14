@@ -75,7 +75,7 @@ public class SoundManager : MonoBehaviour
 
 	private float CalSetVolume(float volume)
 	{
-		//Min = -45db, Max = 20db
+		//Min = -45db, Max = 20db, BaseVolume = 0-100f (float Unit)
 		var tmpVolume = (volume - 50f) * 0.4f;
 		if (volume < 50f) tmpVolume *= 2.25f;
 		return tmpVolume;
