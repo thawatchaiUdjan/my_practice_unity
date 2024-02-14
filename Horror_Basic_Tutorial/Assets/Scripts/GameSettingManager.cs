@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.Rendering.PostProcessing;
 using PlayerController;
+using System.Linq;
 
 
 public class GameSettingManager : MonoBehaviour
@@ -33,13 +34,14 @@ public class GameSettingManager : MonoBehaviour
 	public int _defaultResolution;
 	public bool _defaultFullScreen = false;
 	public int _defaultQuality;
-	public float _defaultVolume = 0.3f; // = 50
+	public float _defaultVolume = 1f; // = 50 value slider
 	public float _defaultMouseSens = 1f;
-	
+
 	//
 	public static GameSettingManager instance;
 
-	private void Awake() { 
+	private void Awake()
+	{
 		if (instance == null)
 		{
 			instance = this;
@@ -48,23 +50,24 @@ public class GameSettingManager : MonoBehaviour
 		else Destroy(gameObject);
 	}
 
-    void Start()
-    { 
+	void Start()
+	{
 		_defaultQuality = QualitySettings.GetQualityLevel(); //Save Default Quality
 		_mouseSens = _defaultMouseSens;
-        SetupResolutionDropdown();
+		SetupResolutionDropdown();
 		ResetDefaultOnClick();
-    }
+	}
 
-	private void SetupResolutionDropdown(){
-		resolutions = Screen.resolutions;
+	private void SetupResolutionDropdown()
+	{
+		var resOptions = new List<string>();
+
+		resolutions = Screen.resolutions.Where((resolution) => (int)resolution.refreshRateRatio.value == 60).ToArray();
 		resolutionDropdown.ClearOptions();
-
-		List<string> resOptions = new List<string>();
 
 		for (int i = 0; i < resolutions.Length; i++)
 		{
-			string option = $"{resolutions[i].width} x {resolutions[i].height}";
+			var option = $"{resolutions[i].width} x {resolutions[i].height}";
 			resOptions.Add(option);
 
 			if (resolutions[i].width == Screen.width & resolutions[i].height == Screen.height)
@@ -77,11 +80,12 @@ public class GameSettingManager : MonoBehaviour
 		resolutionDropdown.RefreshShownValue();
 	}
 
-    public void StartGameSettings(){
+	public void StartGameSettings()
+	{
 		FirstPersonController.instance.RotationSpeed = _mouseSens; //Set Mouse
 		SoundManager.instance.AudioVolume = _volume; //Set Sound
 		Camera.main.TryGetComponent<PostProcessVolume>(out var _ppVolume); //Set PostProcessing
-		
+
 		if (_ppVolume != null & _qualityLevel >= 2)
 		{
 			var profile = _ppVolume.profile;
@@ -90,32 +94,37 @@ public class GameSettingManager : MonoBehaviour
 		}
 	}
 
-	public void SetupSettingsUI(){
+	public void SetupSettingsUI()
+	{
 		resolutionDropdown.value = _resolution;
 		fullScreenToggle.isOn = _isFullScreen;
 		qualityDropdown.value = _qualityLevel;
-		OnChangeSound(_volume / 0.006f);
+		OnChangeSound(_volume * 50f);
 	}
 
-	public void SetSettings(){
+	public void SetSettings()
+	{
 		_resolution = resolutionDropdown.value;
 		_isFullScreen = fullScreenToggle.isOn;
 		_qualityLevel = qualityDropdown.value;
-		_volume = soundSlider.value * 0.006f;
+		_volume = soundSlider.value / 50f;
 	}
 
-	public void ApplyChange(){
+	public void ApplyChange()
+	{
 		Resolution resolution = resolutions[_resolution];
 		Screen.SetResolution(resolution.width, resolution.height, _isFullScreen);
 		QualitySettings.SetQualityLevel(_qualityLevel);
 	}
 
-	public void ApplyOnClick(){
+	public void ApplyOnClick()
+	{
 		SetSettings();
 		ApplyChange();
 	}
 
-	public void ResetDefaultOnClick(){
+	public void ResetDefaultOnClick()
+	{
 		_resolution = _defaultResolution;
 		_isFullScreen = _defaultFullScreen;
 		_qualityLevel = _defaultQuality;
@@ -124,11 +133,13 @@ public class GameSettingManager : MonoBehaviour
 		ApplyChange();
 	}
 
-	public void QuitOnClick(){
+	public void QuitOnClick()
+	{
 		Application.Quit();
 	}
 
-	public void OnChangeSound(float volume){
+	public void OnChangeSound(float volume)
+	{
 		soundSlider.value = volume;
 		soundValueText.text = volume.ToString();
 	}

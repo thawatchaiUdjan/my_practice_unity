@@ -23,7 +23,7 @@ public class WorldGlobeInteract : Interactable
 		isInteractable = false;
 		if(GameManager.instance.isPreGameClear){
 			StartCoroutine(RotateY(90f, 1f));
-			AudioSource.PlayClipAtPoint(_sound.worldGlobeRotate, transform.position, _sound.AudioVolume * 0.65f);
+			AudioSource.PlayClipAtPoint(_sound.worldGlobeRotate, transform.position, _sound.AudioVolume);
 			return;
 		}
 

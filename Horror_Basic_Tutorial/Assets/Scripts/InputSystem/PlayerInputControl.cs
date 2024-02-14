@@ -14,11 +14,12 @@ namespace PlayerController
 		public bool sprint;
 
 		[Header("General Input Values")]
+		public bool sprintAble = false;
 		public bool flashLightAble = true;
 		public bool flashLight;
 		public bool escapeAble = true;
 		public bool escape;
-
+		
 		[Header("Movement Settings")]
 		public bool analogMovement;
 		public bool moveable = true;
@@ -58,7 +59,10 @@ namespace PlayerController
 
 		public void OnSprint(InputValue value)
 		{
-			SprintInput(value.isPressed);
+			if (sprintAble)
+			{
+				SprintInput(value.isPressed);
+			}
 		}
 
 		public void OnFlashLight(InputValue value)

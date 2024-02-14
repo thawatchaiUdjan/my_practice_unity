@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
-{	
-	[Range(0,1)] public float AudioVolume = 0.3f;
+{
+	[Range(0, 1)] public float AudioVolume = 0.3f;
 
 	[Header("General Sound")]
 	public List<AudioClip> FootStepAudioClip;
@@ -17,7 +17,7 @@ public class SoundManager : MonoBehaviour
 	public AudioClip heartbeatMedium;
 	public AudioClip heartbeatFast;
 	public AudioClip worldGlobeRotate;
-	
+
 	[Header("Game Status Sound")]
 	public AudioClip breakingBone;
 	public AudioClip clockAlarm;
@@ -47,100 +47,118 @@ public class SoundManager : MonoBehaviour
 	public AudioClip doorRoomClose;
 	public AudioClip bookDrop;
 
-	public AudioSource soundBg;
+	private AudioSource soundBg;
 	private Transform _player;
 	//
 	public static SoundManager instance;
-	private void Awake() {
+	private void Awake()
+	{
 		instance = this;
 		_player = GameObject.FindWithTag("Player").transform;
 	}
 
-    void Start()
-    {
+	void Start()
+	{
 		soundBg = GetComponent<AudioSource>();
-		soundBg.volume = AudioVolume * 0.065f;
+		soundBg.volume = AudioVolume * 0.04f;
 		soundBg.Play();
-    }
+	}
 
-	public void OnBatteryPickup(){
+	public void StopSoundBg()
+	{
+		soundBg.Stop();
+	}
+
+	public void OnBatteryPickup()
+	{
 		if (batteryPickup != null)
 		{
 			AudioSource.PlayClipAtPoint(batteryPickup, _player.position, AudioVolume * 0.5f);
 		}
 	}
 
-	public void OnObjectivePickup(){
+	public void OnObjectivePickup()
+	{
 		if (objectivePickup != null)
 		{
-			AudioSource.PlayClipAtPoint(objectivePickup,  _player.position, AudioVolume * 0.5f);
+			AudioSource.PlayClipAtPoint(objectivePickup, _player.position, AudioVolume * 0.5f);
 		}
 	}
 
-	public void OnNotePickup(){
+	public void OnNotePickup()
+	{
 		if (notePickup != null)
 		{
-			AudioSource.PlayClipAtPoint(notePickup,  _player.position, AudioVolume);
+			AudioSource.PlayClipAtPoint(notePickup, _player.position, AudioVolume);
 		}
 	}
 
-	public void OnTurnOnFlashLight(){
+	public void OnTurnOnFlashLight()
+	{
 		if (turnOnFlashLight != null)
 		{
-			AudioSource.PlayClipAtPoint(turnOnFlashLight,  _player.position, AudioVolume * 0.5f);
+			AudioSource.PlayClipAtPoint(turnOnFlashLight, _player.position, AudioVolume * 0.5f);
 		}
 	}
 
-	public void OnTurnOffFlashLight(){
+	public void OnTurnOffFlashLight()
+	{
 		if (turnOffFlashLight != null)
 		{
-			AudioSource.PlayClipAtPoint(turnOffFlashLight,  _player.position, AudioVolume * 0.5f);
+			AudioSource.PlayClipAtPoint(turnOffFlashLight, _player.position, AudioVolume * 0.5f);
 		}
 	}
 
-	public void OnFirstObjectivePickup(){
+	public void OnFirstObjectivePickup()
+	{
 		if (firstObjectPickup != null)
 		{
-			AudioSource.PlayClipAtPoint(firstObjectPickup,  _player.position, AudioVolume * 0.2f);
+			AudioSource.PlayClipAtPoint(firstObjectPickup, _player.position, AudioVolume * 0.2f);
 		}
 	}
 
-	public void OnCameraPickup(){
+	public void OnCameraPickup()
+	{
 		if (cameraPickup != null)
 		{
 			AudioSource.PlayClipAtPoint(cameraPickup, _player.position, AudioVolume * 0.5f);
 		}
 	}
 
-	public void OnCameraEquip(){
+	public void OnCameraEquip()
+	{
 		if (cameraEquip != null)
 		{
 			AudioSource.PlayClipAtPoint(cameraEquip, _player.position, AudioVolume * 0.5f);
 		}
 	}
 
-	public void OnCountdownTime(){
+	public void OnCountdownTime()
+	{
 		if (clockCountdown != null)
 		{
-			AudioSource.PlayClipAtPoint(clockCountdown,  _player.position, AudioVolume * 0.35f);
+			AudioSource.PlayClipAtPoint(clockCountdown, _player.position, AudioVolume * 0.35f);
 		}
 	}
 
-	public void OnGameClear_1(){
+	public void OnGameClear_1()
+	{
 		if (breakingBone != null)
 		{
-			AudioSource.PlayClipAtPoint(breakingBone,  _player.position, AudioVolume * 0.5f);
+			AudioSource.PlayClipAtPoint(breakingBone, _player.position, AudioVolume * 0.5f);
 		}
 	}
 
-	public void OnGameClear_2(){
+	public void OnGameClear_2()
+	{
 		if (clockAlarm != null)
 		{
-			AudioSource.PlayClipAtPoint(clockAlarm,  _player.position, AudioVolume * 0.5f);
+			AudioSource.PlayClipAtPoint(clockAlarm, _player.position, AudioVolume * 0.5f);
 		}
 	}
 
-	public AudioClip GetGhostSoundAnim(GhostTypeManager.Anim animType){
+	public AudioClip GetGhostSoundAnim(GhostTypeManager.Anim animType)
+	{
 		AudioClip behaviourSound = null;
 
 		switch (animType)

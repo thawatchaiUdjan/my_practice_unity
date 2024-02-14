@@ -15,6 +15,9 @@ public class ObjectiveInteract : Interactable
 
 		if (interactableName.Equals("FirstObjective"))
 		{
+			isInteractable = false;
+			TargetOff();
+			GetComponent<Renderer>().enabled = false;
 			StartCoroutine(GameManager.instance.LetsGameStart());
 			return;
 		}

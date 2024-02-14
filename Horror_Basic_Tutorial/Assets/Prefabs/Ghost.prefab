@@ -908,9 +908,9 @@ GameObject:
   - component: {fileID: 2156549463065389417}
   - component: {fileID: 6822884230937378509}
   - component: {fileID: 7602384704455996882}
+  - component: {fileID: 1974440640277965269}
   - component: {fileID: 3058342420059172143}
   - component: {fileID: 6332746494035822107}
-  - component: {fileID: 1974440640277965269}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -1022,6 +1022,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 1.4, z: 10}
   m_Center: {x: 0, y: 0.7, z: 0}
+--- !u!114 &1974440640277965269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7131621650321212468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb649a2432f36694892f03cac7dae2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayOfRandom: 1
 --- !u!82 &3058342420059172143
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1214,19 +1227,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1974440640277965269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7131621650321212468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb649a2432f36694892f03cac7dae2f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delayOfRandom: 1
 --- !u!1 &7387157221669752723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,7 +1381,7 @@ Transform:
   m_GameObject: {fileID: 8976994426845967263}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1412,8 +1412,6 @@ SkinnedMeshRenderer:
   - {fileID: 2100000, guid: 92a4cbea58225fd409e757bce9123542, type: 2}
   - {fileID: 2100000, guid: 2e809d596bb456044835810c3f835ea5, type: 2}
   - {fileID: 2100000, guid: 21cf05e8a7c02d9489ddf5824bf85462, type: 2}
-  - {fileID: 2100000, guid: 9084d8370468a0d4bba894e3459b96d3, type: 2}
-  - {fileID: 2100000, guid: e79c20570eef34b4295249ebff8dac9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

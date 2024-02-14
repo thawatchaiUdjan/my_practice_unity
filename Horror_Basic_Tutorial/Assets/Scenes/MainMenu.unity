@@ -3825,7 +3825,7 @@ MonoBehaviour:
   _defaultResolution: 0
   _defaultFullScreen: 0
   _defaultQuality: 0
-  _defaultVolume: 0.3
+  _defaultVolume: 1
   _defaultMouseSens: 1
 --- !u!114 &1105359343
 MonoBehaviour:

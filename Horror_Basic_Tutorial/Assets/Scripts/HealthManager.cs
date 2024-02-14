@@ -94,7 +94,6 @@ public class HealthManager : MonoBehaviour
 			else
 			{
 				health = maxHealth;
-				break;
 			}
 		}
 	}

@@ -36,7 +36,7 @@ public class GameEventManager : MonoBehaviour
 	}
 
 	public void FontDoorOpen(){
-		PlayAnimate(fontDoor, _sound.fontDoorOpen, _sound.AudioVolume * 0.5f);
+		PlayAnimate(fontDoor, _sound.fontDoorOpen, _sound.AudioVolume);
 	}
 
 	public IEnumerator PreEventGameClear(){ 

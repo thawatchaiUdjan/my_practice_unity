@@ -31,7 +31,7 @@ public class TalismanInteract : Interactable
 		_soundManager = SoundManager.instance;
 
 		_sound = GetComponent<AudioSource>();
-		_sound.volume = _soundManager.AudioVolume * 0.3f;
+		_sound.volume = _soundManager.AudioVolume;
 		_sound.clip = _soundManager.paperSlide;
 		
 		gameObject.SetActive(false);

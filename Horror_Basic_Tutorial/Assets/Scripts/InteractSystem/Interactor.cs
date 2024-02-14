@@ -41,7 +41,7 @@ public class Interactor : MonoBehaviour
 
             if(hit.transform.TryGetComponent(out Interactable target))
 			{ 	
-				if (Vector3.Distance(origin, target.transform.position) <= _interactDistance){
+				if (hitDistance <= _interactDistance){
 					_interactTarget = target;
 					_interactTarget.TargetOn();
 				} 
@@ -71,7 +71,7 @@ public class Interactor : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(origin,origin+direction * hitDistance);
+        Gizmos.DrawLine(origin, origin + direction * hitDistance);
 		Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(hitPosition, _interactRadius);
     }

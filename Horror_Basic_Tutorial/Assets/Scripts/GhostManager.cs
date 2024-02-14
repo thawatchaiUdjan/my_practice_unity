@@ -18,14 +18,14 @@ public class GhostManager : MonoBehaviour
 	private IEnumerator _healthIncrease;
 
 	private GameObject[] _ghostWayPoints;
-	private int _wayPointIndex;
+	private int? _wayPointIndex = null;
 
 	public static GhostManager instance;
 	private void Awake() {
 		instance = this;
 	}
 
-    void Start()
+    private void StartComponents()
     {
         _health = HealthManager.instance;
 		_soundManager = SoundManager.instance;
@@ -44,12 +44,9 @@ public class GhostManager : MonoBehaviour
 
 		_ghostWayPoints = GameObject.FindGameObjectsWithTag("GhostWayPoint");
     }
-    
-    void Update()
-    {
 
-    }
 	public void SetupGhost(){
+		StartComponents();
 		gameObject.SetActive(true);
 		StartCoroutine(RandomWayPoint());
 	}
@@ -70,10 +67,10 @@ public class GhostManager : MonoBehaviour
 	public IEnumerator RandomWayPoint(){
 		while (true)
 		{
-			var wayPoint = _ghostWayPoints[_wayPointIndex].transform;
-			var animType = wayPoint.GetComponent<GhostTypeManager>().animType;
 			_wayPointIndex = RandomIndex();
-		
+			var wayPoint = _ghostWayPoints[(int)_wayPointIndex].transform;
+			var animType = wayPoint.GetComponent<GhostTypeManager>().animType;
+			
 			_ghost.enabled = true;
 			_ghost.SetDestination(wayPoint.position);
 			_animator.Play(GhostTypeManager.Anim.Walk.ToString());
@@ -110,8 +107,9 @@ public class GhostManager : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
+		CheckComponent();
 		GameObject target = other.gameObject; 
-		
+
 		if (target.tag == "Player")
 		{
 			StopCoroutine(_healthIncrease);
@@ -124,6 +122,7 @@ public class GhostManager : MonoBehaviour
 
 	void OnTriggerExit(Collider other)
 	{
+		CheckComponent();
 		GameObject target = other.gameObject; 
 
 		if (target.tag == "Player")
@@ -137,6 +136,7 @@ public class GhostManager : MonoBehaviour
 
 	void OnTriggerStay(Collider other)
 	{
+		CheckComponent();
 		GameObject target = other.gameObject; 
 
 		if (target.tag == "Player")
@@ -175,6 +175,11 @@ public class GhostManager : MonoBehaviour
 				_glitchEfx.ShowEfx(glitchLvl);
 			}
 		}
+	}
+
+	private void CheckComponent()
+	{
+		if (_health == null) StartComponents();
 	}
 
 	private void OnFootStep(AnimationEvent animationEvent){

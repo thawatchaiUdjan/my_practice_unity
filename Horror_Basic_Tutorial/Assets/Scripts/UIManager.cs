@@ -23,12 +23,12 @@ public class UIManager : MonoBehaviour
 	public TextMeshProUGUI texHintPressBtnText;
 	public TextMeshProUGUI texHintPressBtnSuffix;
 	public TextMeshProUGUI textRemainingTime;
-	public TextMeshProUGUI textHeaderMenu;	
+	public TextMeshProUGUI textHeaderMenu;
 	public TextMeshProUGUI textClearGame;
 
 	[Header("Text Assets")]
 	[SerializeField] private TextAsset hintTurnOnLight;
-	
+
 	//String Input Actions
 	private string _strFlashLight = "FlashLight";
 	private string _strInteract = "Interact";
@@ -45,12 +45,13 @@ public class UIManager : MonoBehaviour
 
 	//
 	public static UIManager instance;
-	private void Awake() {
+	private void Awake()
+	{
 		instance = this;
 	}
 
-    void Start()
-    {
+	void Start()
+	{
 		_game = GameManager.instance;
 		_input = PlayerInputControl.instance;
 		_scene = LoadSceneManager.instance;
@@ -58,86 +59,100 @@ public class UIManager : MonoBehaviour
 		SetupTextKey();
 	}
 
-	public void SetupTextKey(){
+	public void SetupTextKey()
+	{
 		texHintPressBtnText.text = _inputAction.actions[_strFlashLight].GetBindingDisplayString();
-
-
 		textCloseNote.text = _inputAction.actions[_strInteract].GetBindingDisplayString();
 	}
 
-	public void SetGameMenu(string txtHeader, string txtClear){
+	public void SetGameMenu(string txtHeader, string txtClear)
+	{
 		gameMenu.SetActive(true);
 		textHeaderMenu.text = txtHeader;
 		textClearGame.text = txtClear;
 	}
 
-	public void SetRemainingTime(string text){
+	public void SetRemainingTime(string text)
+	{
 		textRemainingTime.gameObject.SetActive(true);
 		textRemainingTime.text = text;
 	}
 
-	public void ShowReadNote(string text){
+	public void ShowReadNote(string text)
+	{
 		HideGameUI();
 		gameReadNoteScene.SetActive(true);
 		textNote.text = text;
 		BlurBgOnOff(true);
 	}
 
-	public void HideReadNote(){
+	public void HideReadNote()
+	{
 		ShowGameUI();
 		gameReadNoteScene.SetActive(false);
 		BlurBgOnOff(false);
 	}
 
-	public void BlurBgOnOff(bool isOn){
+	public void BlurBgOnOff(bool isOn)
+	{
 		var profile = Camera.main.GetComponent<PostProcessVolume>().profile;
 		profile.GetSetting<DepthOfField>().active = isOn;
 	}
 
-	public IEnumerator ShowHints(GameObject obj){
+	public IEnumerator ShowHints(GameObject obj)
+	{
 		obj.SetActive(true);
 		obj.TryGetComponent(out Animation objAnim);
 		if (objAnim != null) yield return new WaitUntil(() => !objAnim.isPlaying);
 		obj.SetActive(false);
 	}
 
-	public void ShowHintMouse(){
+	public void ShowHintMouse()
+	{
 		StartCoroutine(ShowHints(gameHintMouse));
 	}
 
-	public void ShowHintOpenLight(){
+	public void ShowHintOpenLight()
+	{
 		texHintPressBtnSuffix.text = hintTurnOnLight.text;
 		StartCoroutine(ShowHints(gameHintPressBtn));
 	}
 
-	public void HideGameUI(){
+	public void HideGameUI()
+	{
 		gameUI.SetActive(false);
 	}
 
-	public void ShowGameUI(){
+	public void ShowGameUI()
+	{
 		gameUI.SetActive(true);
 	}
 
-	public IEnumerator ActionSceneFadeIn(){
+	public IEnumerator ActionSceneFadeIn()
+	{
 		gameActionScene.SetActive(true);
 		gameActionScene.TryGetComponent(out Animation anim);
 		anim.Play(_animActionFadeIn);
 		yield return new WaitUntil(() => !anim.isPlaying);
 	}
 
-	public IEnumerator ActionSceneFadeOut(){
+	public IEnumerator ActionSceneFadeOut()
+	{
 		gameActionScene.TryGetComponent(out Animation anim);
 		anim.Play(_animActionFadeOut);
 		yield return new WaitUntil(() => !anim.isPlaying);
 		gameActionScene.SetActive(false);
 	}
 
-	public void GameClearFade(){
+	public void GameClearFade()
+	{
 		gameClearScene.SetActive(true);
 	}
 
-	public void LoadSceneOnClick(string sceneName){
-		if(!_game.isDebug){
+	public void LoadSceneOnClick(string sceneName)
+	{
+		if (!_game.isDebug)
+		{
 			_scene.LoadSceneOnClick(sceneName);
 		}
 	}

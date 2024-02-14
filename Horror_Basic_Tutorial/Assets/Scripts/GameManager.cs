@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
 	[Header("Game Objects")]
 	public GameObject firstObjective;
-	
+
 	[Header("Variables")]
 	public bool isPreGameClear;
 	public bool isCameraPickedUp;
@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
 	[Header("Text Assets")]
 	[SerializeField] private TextAsset _onGameStart;
-	
+
 	//Private Class
 	private UIManager _ui;
 	private LoadSceneManager _scene;
@@ -39,11 +39,12 @@ public class GameManager : MonoBehaviour
 
 	//
 	public static GameManager instance;
-    private void Awake() {
+	private void Awake()
+	{
 		instance = this;
 	}
-    void Start()
-    {
+	void Start()
+	{
 		_ui = UIManager.instance;
 		_scene = LoadSceneManager.instance;
 		_settings = GameSettingManager.instance;
@@ -59,15 +60,16 @@ public class GameManager : MonoBehaviour
 
 		isDebug = _scene == null;
 		StartCoroutine(GameStart()); //Game Start OnClick
-    }
+	}
 
-    void Update()
-    {
-       if(!isCameraPickedUp) _input.flashLightAble = false;
-    }
+	void Update()
+	{
+		if (!isCameraPickedUp) _input.flashLightAble = false;
+	}
 
 	// =============================== Setup Field =====================================
-	public IEnumerator GameStart(){
+	public IEnumerator GameStart()
+	{
 		GameSetup();
 		if (!isDebug)
 		{
@@ -79,30 +81,34 @@ public class GameManager : MonoBehaviour
 			_input.ResetLockAll();
 			yield return new WaitForSeconds(2);
 			_dialogue.StartDialogue(_onGameStart.text);
-		} 
+		}
 		else DebugMode();
 		StartCoroutine(CountPlayTime());
 	}
 
-	public void GameSetup(){
+	public void GameSetup()
+	{
 		HealthManager.instance.SetupHealth();
 		_objective.ReSetObjective();
 		_ghost.ResetGhost();
 		SetupPlayerPosition();
 	}
 
-	public void GameAfterCameraSetup(){
+	public void GameAfterCameraSetup()
+	{
 		BatteryManager.instance.SetupBattery();
 		SetupFirstObjective();
 		isCameraPickedUp = true;
 		_ui.ShowGameUI();
 	}
 
-	public void DebugMode(){
+	public void DebugMode()
+	{
 		GameAfterCameraSetup();
 	}
 
-	public void SetupFirstObjective(){
+	public void SetupFirstObjective()
+	{
 		var firstObjectsOnMap = GameObject.FindGameObjectsWithTag("FirstObjective");
 		var pos = Random.Range(0, firstObjectsOnMap.Length);
 		var tf = firstObjectsOnMap[pos].transform;
@@ -111,41 +117,46 @@ public class GameManager : MonoBehaviour
 		firstObjective.SetActive(true);
 	}
 
-	public void SetupPlayerPosition(){
+	public void SetupPlayerPosition()
+	{
 		var respawn = GameObject.FindWithTag("Respawn").transform;
 		_player.transform.position = respawn.position;
 		_player.transform.rotation = respawn.rotation;
 	}
 	// =============================== Setup Field =====================================
 
-	public IEnumerator LetsGameStart(){
+	public IEnumerator LetsGameStart()
+	{
 		_sound.OnFirstObjectivePickup();
 		_event.FontDoorOpen();
-		firstObjective.SetActive(false);
 		yield return new WaitForSeconds(5);
 		_objective.SetupObjective();
 		_ghost.SetupGhost();
+		firstObjective.SetActive(false);
 	}
 
-	public void PreGameClear(){
+	public void PreGameClear()
+	{
 		isPreGameClear = true;
-		_sound.soundBg.Stop();
+		_sound.StopSoundBg();
 		_ghost.ResetGhost();
 		StartCoroutine(CountdownTime(countDownTime));
 		StartCoroutine(_event.PreEventGameClear());
 	}
 
-	public void GameClear(){
+	public void GameClear()
+	{
 		StopAllCoroutines();
 		_input.LockAll();
 		_ui.HideGameUI();
 		_animation.Play(_animGameClear + "_" + gameClearType);
 	}
 
-	public void GameOver(){
+	public void GameOver()
+	{
 		StopAllCoroutines();
 		_input.LockAll();
-		_sound.soundBg.Stop();
+		_sound.StopSoundBg();
 		_ui.HideGameUI();
 		_ghost.StopGhost();
 		_animation.Play(_animGameOver);
@@ -153,10 +164,10 @@ public class GameManager : MonoBehaviour
 
 	public IEnumerator CountdownTime(float time)
 	{
-		var remainTime = time * 60; 
+		var remainTime = time * 60;
 
 		while (remainTime > 0f)
-		{	
+		{
 			yield return new WaitForSeconds(1);
 			remainTime -= 1;
 			var minute = Mathf.FloorToInt(remainTime / 60);
@@ -168,8 +179,10 @@ public class GameManager : MonoBehaviour
 		GameOver(); //Remain time <= 0 sec.
 	}
 
-	public IEnumerator CountPlayTime(){
-		while (true){
+	public IEnumerator CountPlayTime()
+	{
+		while (true)
+		{
 			gamePlayTime += Time.deltaTime;
 			yield return null;
 		}

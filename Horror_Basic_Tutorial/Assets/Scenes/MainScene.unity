@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 535366379}
-  m_IndirectSpecularColor: {r: 0.11588039, g: 0.17825106, b: 0.18100405, a: 1}
+  m_IndirectSpecularColor: {r: 0.11586536, g: 0.17824984, b: 0.18100116, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 020ab2864aaef4c44857fd8d9e57ee19, type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 377929bcb3b968e4f89cbea02e6ab21f, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -1929,7 +1929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23686f58dd099614c9af93b394a59ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioVolume: 0.3
+  AudioVolume: 1
   FootStepAudioClip:
   - {fileID: 8300000, guid: 4a763834a5ae69546ab9bacd0a88ffcc, type: 3}
   - {fileID: 8300000, guid: 28b7ae1927005184d868fb139ee50257, type: 3}
@@ -1966,7 +1966,6 @@ MonoBehaviour:
   doorRoomOpen: {fileID: 8300000, guid: d3c970924eda22142969282453a87045, type: 3}
   doorRoomClose: {fileID: 8300000, guid: eafaf6a08a8c75f46b75813185be0ac0, type: 3}
   bookDrop: {fileID: 8300000, guid: 4036b0f2215d40b4d9cb8912b676dea8, type: 3}
-  soundBg: {fileID: 0}
 --- !u!4 &529682530
 Transform:
   m_ObjectHideFlags: 0
@@ -4234,10 +4233,10 @@ WindZone:
   m_Enabled: 1
   m_Mode: 0
   m_Radius: 20
-  m_WindMain: 0.2
-  m_WindTurbulence: 0.2
-  m_WindPulseMagnitude: 0.2
-  m_WindPulseFrequency: 0.01
+  m_WindMain: 3
+  m_WindTurbulence: 0.4
+  m_WindPulseMagnitude: 0.4
+  m_WindPulseFrequency: 0.5
 --- !u!4 &994447218
 Transform:
   m_ObjectHideFlags: 0
@@ -6927,7 +6926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6445760300916844189, guid: 33c9d883378a7314f91aa81872fb106f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.75
+      value: -9.54
       objectReference: {fileID: 0}
     - target: {fileID: 6445760300916844189, guid: 33c9d883378a7314f91aa81872fb106f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9200,7 +9199,7 @@ Transform:
   m_GameObject: {fileID: 1754463004}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.999, y: 0, z: -1.5}
+  m_LocalPosition: {x: 13.857, y: 4.884, z: 3.262}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10214,6 +10213,10 @@ PrefabInstance:
       propertyPath: m_Animations.Array.data[1]
       value: 
       objectReference: {fileID: 7400000, guid: 7253effae96a6954096452aa2766ed74, type: 2}
+    - target: {fileID: 8327606588288435124, guid: 33c9d883378a7314f91aa81872fb106f, type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9084d8370468a0d4bba894e3459b96d3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13291,8 +13294,6 @@ SkinnedMeshRenderer:
   - {fileID: 2100000, guid: 92a4cbea58225fd409e757bce9123542, type: 2}
   - {fileID: 2100000, guid: 2e809d596bb456044835810c3f835ea5, type: 2}
   - {fileID: 2100000, guid: 21cf05e8a7c02d9489ddf5824bf85462, type: 2}
-  - {fileID: 2100000, guid: 9084d8370468a0d4bba894e3459b96d3, type: 2}
-  - {fileID: 2100000, guid: e79c20570eef34b4295249ebff8dac9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13463,8 +13464,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7315619463484059464, guid: e7a54195bb0d48249b639fa318c5507d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.477
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8529227819780286389, guid: e7a54195bb0d48249b639fa318c5507d, type: 3}
+    - {fileID: 8407983553655713645, guid: e7a54195bb0d48249b639fa318c5507d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7a54195bb0d48249b639fa318c5507d, type: 3}
@@ -13665,6 +13672,10 @@ PrefabInstance:
     - target: {fileID: 2911833841250365166, guid: 28ebf5606f88ffe4e9fb270de572367d, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378426173543204691, guid: 28ebf5606f88ffe4e9fb270de572367d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3962556719405160640, guid: 28ebf5606f88ffe4e9fb270de572367d, type: 3}
       propertyPath: healthSystem
